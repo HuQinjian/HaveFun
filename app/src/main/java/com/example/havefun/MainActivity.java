@@ -17,6 +17,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.havefun.databinding.ActivityMainBinding;
+import com.gyf.immersionbar.ImmersionBar;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -35,9 +36,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+//            //透明状态栏
+//            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+//            //透明导航栏
+//            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+//        }
         super.onCreate(savedInstanceState);
         mainBinding = ActivityMainBinding.inflate(getLayoutInflater());
+        ImmersionBar.with(this)
+                .statusBarColor(R.color.white)
+                .statusBarDarkFont(true)
+                .autoDarkModeEnable(true)
+                .init();
         setContentView(mainBinding.getRoot());
+
         myDialog = new MyDialog(this);
         mainBinding.etPrice.setEnabled(false);
         mainBinding.etMinprice.setEnabled(false);
@@ -62,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else {
             //将除key之外的不空的值设入map中
         }
-        Toast.makeText(this, "map:" + map.toString(), Toast.LENGTH_SHORT).show();
+
         //请求数据并展示
         RetrofitClient_bore.getInstance().getService(Service.class).getActivity(map)
                 .subscribeOn(Schedulers.io())
