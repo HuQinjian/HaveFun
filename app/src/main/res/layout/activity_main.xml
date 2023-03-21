@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="杀死无聊！"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#FF0000" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/relativelayout02"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:id="@+id/tv_activity01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginHorizontal="10dp"
+            android:gravity="center"
+            android:text="感到无聊吗？点击按钮找个活动试试！"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/tv_activity02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_activity01"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="10dp"
+            android:gravity="center"
+            android:text="下面限定条件全空则随机选择活动"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relativelayout02"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:id="@+id/layout01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/tv_key"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="活动key："
+                android:textColor="@color/gray"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/et_key"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:layout_weight="2"
+                android:imeOptions="actionDone"
+                android:background="@drawable/edit_background"
+                android:hint="请输入七位活动key(纯数字)"
+                android:textColorHint="@color/gray"
+                android:textColor="@color/black"
+                android:inputType="number"
+                android:maxLength="7"
+                android:singleLine="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout01"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/tv_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="活动类型："
+                android:textColor="@color/gray"
+                android:textSize="20dp" />
+
+            <Spinner
+                android:id="@+id/spinner_type"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:layout_weight="2"
+                android:dropDownVerticalOffset="5dp"
+                android:entries="@array/spinnerClass"
+                android:overlapAnchor="false"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout03"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout02"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/tv_participants"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:inputType="number"
+                android:text="活动人数："
+                android:textColor="@color/gray"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/et_participants"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:layout_weight="2"
+                android:imeOptions="actionDone"
+                android:textColorHint="@color/gray"
+                android:textColor="@color/black"
+                android:background="@drawable/edit_background"
+                android:hint="请输入活动人数"
+                android:inputType="number" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearlayout_price_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout03"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/radiogroup01"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radiogroup01btn01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:buttonTint="@color/black"
+                    android:gravity="center" />
+
+                <RadioButton
+                    android:id="@+id/radiogroup01btn02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:buttonTint="@color/black"
+                    android:gravity="center" />
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/linearlayout_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/layout04"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/tv_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="活动经费："
+                        android:textColor="@color/gray"
+                        android:textSize="20dp" />
+
+                    <EditText
+                        android:id="@+id/et_price"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:imeOptions="actionDone"
+                        android:textColorHint="@color/gray"
+                        android:textColor="@color/black"
+                        android:background="@drawable/edit_background"
+                        android:hint="范围在0~1之间（例：0.4）"
+                        android:inputType="numberDecimal"
+                        android:singleLine="true" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout05"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/tv_pricerange"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="经费范围："
+                        android:textColor="@color/gray"
+                        android:textSize="20dp" />
+
+                    <EditText
+                        android:id="@+id/et_minprice"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="4"
+                        android:textColorHint="@color/gray"
+                        android:textColor="@color/black"
+                        android:background="@drawable/edit_background"
+                        android:gravity="center"
+                        android:imeOptions="actionDone"
+                        android:hint="0.0"
+                        android:inputType="numberDecimal" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.7"
+                        android:gravity="center"
+                        android:text="--"
+                        android:textSize="25dp" />
+
+                    <EditText
+                        android:id="@+id/et_maxprice"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="4"
+                        android:textColorHint="@color/gray"
+                        android:textColor="@color/black"
+                        android:background="@drawable/edit_background"
+                        android:gravity="center"
+                        android:imeOptions="actionDone"
+                        android:hint="1.0"
+                        android:inputType="numberDecimal" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearlayout_accessibility_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearlayout_price_container"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/radiogroup02"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radiogroup02btn01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:buttonTint="@color/black"
+                    android:gravity="center" />
+
+                <RadioButton
+                    android:id="@+id/radiogroup02btn02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:buttonTint="@color/black"
+                    android:gravity="center" />
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/linearlayout_accessibility"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/layout06"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/tv_accessibility"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="活动难易："
+                        android:textColor="@color/gray"
+                        android:textSize="20dp" />
+
+                    <EditText
+                        android:id="@+id/et_accessibility"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="2"
+                        android:imeOptions="actionDone"
+                        android:textColorHint="@color/gray"
+                        android:textColor="@color/black"
+                        android:background="@drawable/edit_background"
+                        android:hint="难易程度在0.0到1.0之间"
+                        android:inputType="numberDecimal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout07"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/tv_accessibilityrange"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="难度范围："
+                        android:textColor="@color/gray"
+                        android:textSize="20dp" />
+
+                    <EditText
+                        android:id="@+id/et_minaccessibility"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="4"
+                        android:background="@drawable/edit_background"
+                        android:gravity="center"
+                        android:textColorHint="@color/gray"
+                        android:textColor="@color/black"
+                        android:imeOptions="actionDone"
+                        android:hint="0.0"
+                        android:inputType="numberDecimal" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.7"
+                        android:gravity="center"
+                        android:text="--"
+                        android:textSize="25dp" />
+
+                    <EditText
+                        android:id="@+id/et_maxaccessibility"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="4"
+                        android:background="@drawable/edit_background"
+                        android:gravity="center"
+                        android:textColorHint="@color/gray"
+                        android:textColor="@color/black"
+                        android:hint="1.0"
+                        android:imeOptions="actionDone"
+                        android:inputType="numberDecimal" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_getData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginHorizontal="10dp"
+            android:background="@drawable/btn_background"
+            android:text="查找活动" />
+
+    </RelativeLayout>
+</RelativeLayout>
