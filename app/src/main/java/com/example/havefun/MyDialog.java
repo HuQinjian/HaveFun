@@ -11,7 +11,7 @@ import androidx.appcompat.app.AlertDialog;
  * @Project: HaveFun
  * @Author: hqj
  * @Date: 2023/3/16 17:39
- * @Introduce:
+ * @Introduce: 自定义Dialog工具类，用于自定义创建并展示dialog
  **/
 
 public class MyDialog extends AlertDialog.Builder {

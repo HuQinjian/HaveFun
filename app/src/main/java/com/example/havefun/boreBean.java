@@ -4,7 +4,7 @@ package com.example.havefun;
  * @Project: HaveFun
  * @Author: hqj
  * @Date: 2023/3/13 15:31
- * @Introduce:
+ * @Introduce: 活动请求的返回实体类
  **/
 public class boreBean {
     private String activity;

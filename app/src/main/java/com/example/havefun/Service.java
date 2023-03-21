@@ -13,7 +13,7 @@ import retrofit2.http.QueryMap;
  * @Project: HaveFun
  * @Author: hqj
  * @Date: 2023/3/13 15:51
- * @Introduce:
+ * @Introduce: 拼接完整请求地址的后缀接口
  **/
 public interface Service {
 

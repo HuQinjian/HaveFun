@@ -4,7 +4,7 @@ package com.example.havefun;
  * @Project: HaveFun
  * @Author: hqj
  * @Date: 2023/3/14 11:26
- * @Introduce:
+ * @Introduce: 翻译请求的第二层返回实体类
  **/
 public class TranslateResult {
 

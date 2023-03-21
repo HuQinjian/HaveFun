@@ -6,7 +6,7 @@ import java.util.List;
  * @Project: HaveFun
  * @Author: hqj
  * @Date: 2023/3/14 11:25
- * @Introduce:
+ * @Introduce: 翻译请求的第一层返回实体类
  **/
 public class TranslateBean {
     private String type;

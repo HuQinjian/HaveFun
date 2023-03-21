@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mainBinding.btnGetData.setOnClickListener(this);
         mainBinding.radiogroup01.setOnCheckedChangeListener(this);
         mainBinding.radiogroup02.setOnCheckedChangeListener(this);
+
     }
 
     @SuppressLint("CheckResult")

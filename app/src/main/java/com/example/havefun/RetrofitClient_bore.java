@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * @Project: HaveFun
  * @Author: hqj
  * @Date: 2023/3/13 15:35
- * @Introduce:
+ * @Introduce: 活动的网络请求类
  **/
 public class RetrofitClient_bore {
     private static volatile RetrofitClient_bore mInstance;
