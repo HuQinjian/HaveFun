@@ -238,6 +238,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
 
+        //判断accessibility输入合法性
         if (mainBinding.radiogroup02.getCheckedRadioButtonId() == R.id.radiogroup02btn01 && str_accessibility.length() != 0) {
             float accessibility = Float.parseFloat(str_accessibility);
             if (accessibility < 0.0 || accessibility > 1.0) {
